@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+:root {
+  --text-light: rgb(255, 255, 255);
+  --text-dark: rgb(202, 210, 229);
+  --main-background: rgb(20, 28, 47);
+  --content-background: rgb(31, 42, 72);
+  --blue: rgb(3, 119, 255);
+}
+
+.theme-light {
+  --text-light: rgb(31, 42, 72);
+  --text-dark: rgb(129, 136, 142);
+  --main-background: rgb(245, 248, 255);
+  --content-background: rgb(255, 255, 255);
+  --blue: rgb(0, 122, 248);
+}
+
+.theme-dark {
+  --text-light: rgb(255, 255, 255);
+  --text-dark: rgb(202, 210, 229);
+  --main-background: rgb(20, 28, 47);
+  --content-background: rgb(31, 42, 72);
+  --blue: rgb(3, 119, 255);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--main-background);
+}
+
+div,
+span,
+button,
+h5,
+p,
+input,
+input::placeholder {
+  font-family: "Space Mono", monospace;
+  color: var(--text-light);
+}
+
+a,
+span {
+  font-size: 1.3em;
+}
+
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+#flex-wrapper {
+  max-width: 720px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo a {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--text-light);
+}
+
+#toggle-theme {
+  background: transparent;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#toggle-theme i {
+  pointer-events: none;
+}
+nav {
+  height: 35px;
+  align-items: center;
+  display: flex;
+  background-color: var(--content-background);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 30px 0 20px 0;
+}
+
+nav i {
+  color: var(--blue);
+  font-size: 24px;
+  padding: 0 5px;
+}
+
+nav input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 16px;
+}
+
+nav input::placeholder {
+  color: var(--text-dark);
+}
+
+nav button {
+  border: none;
+  outline: none;
+  background-color: var(--blue);
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+nav button:hover {
+  background-color: rgb(26, 70, 130);
+}
+
+nav button:active {
+  background-color: rgb(22, 62, 114);
+}
+
+main {
+  padding: 2rem;
+  background-color: var(--content-background);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-template-areas:
+    "image name joined"
+    "image main main"
+    "image information information";
+}
+
+.image {
+  grid-area: image;
+}
+
+.image img {
+  border-radius: 50%;
+  width: 70%;
+  height: auto;
+}
+
+.name {
+  grid-area: name;
+}
+
+.joined {
+  grid-area: joined;
+}
+
+#joined-date {
+  margin: 0;
+}
+
+#main {
+  grid-area: main;
+}
+
+.stats {
+  background-color: var(--main-background);
+  border-radius: 10px;
+  margin: 30px 0;
+  padding: 20px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.stats h5 {
+  margin: 0;
+  font-weight: normal;
+}
+
+.stats span {
+  font-weight: 700;
+  display: block;
+  max-width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.information {
+  grid-area: information;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 30px;
+}
+
+.following {
+  padding-right: 50px;
+}
+
+.information div {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  #flex-wrapper {
+    max-width: 480px;
+  }
+
+  main {
+    grid-template-areas:
+      "image name"
+      "image joined"
+      "main main"
+      "information information";
+  }
+  .image img {
+    width: 50%;
+  }
+  a,
+  span {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  #flex-wrapper {
+    max-width: 360px;
+  }
+
+  nav input {
+    padding-right: 10px;
+  }
+
+  .stats {
+    gap: 15px;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  .stats span {
+    max-width: 100%;
+  }
+
+  .following {
+    padding-right: 0;
+  }
+
+  .information {
+    display: block;
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="images/icon.png">
+        <link rel="stylesheet" href="css/fontello.css">
+        <link rel="stylesheet" href="css/main.css">
+        <title>GitHub user search</title>
+    </head>
+    <body>
+        <div class="container">
+            <div id="flex-wrapper">
+                <header>
+                    <div id="logo">
+                        <a href="/">devfinder</a>
+                    </div>
+                    <div id="theme">
+                        <button type="button" id="toggle-theme">light <i class="icon-sun-filled"></i></button>
+                    </div>
+                </header>
+                <nav>
+                    <i class="icon-search"></i>
+                    <input type="text" id="input-name" placeholder="Search GitHub username...">
+                    <button type="button" id="search-user">Search</button>
+                </nav>
+                <main>
+                    <div class="image">
+                        <img id="user-image" src="images/default.png" alt="user photo">
+                    </div>
+                    <div class="name">
+                        <span id="username">No Name</span>
+                    </div>
+                    <div id="joined">
+                        <p id="joined-date"></p>
+                    </div>
+                    <div id="main">
+                        <p id="bio">No bio</p>
+                        <div class="stats">
+                            <div class="repos">
+                                <h5>Repos</h5>
+                                <span id="repos-value">0</span>
+                            </div>
+                            <div class="followers">
+                                <h5>Followers</h5>
+                                <span id="followers-value">0</span>
+                            </div>
+                            <div class="following">
+                                <h5>Following</h5>
+                                <span id="following-value">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="information">
+                        <div id="location">
+                            <i class="icon-location"></i>
+                            <span id="user-location">No location</span>
+                        </div>
+                        <div id="twitter">
+                            <i class="icon-twitter"></i>
+                            <a id="user-twitter">No twitter</a>
+                        </div>
+                        <div id="blog">
+                            <i class="icon-link"></i>
+                            <a id="user-blog">No blog</a>
+                        </div>
+                        <div id="company">
+                            <i class="icon-building"></i>
+                            <span id="user-company">No company</span>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script src="js/index.js">
+        </script>
+    </body>
+</html>
